@@ -1,9 +1,9 @@
 package kconfigurator
 
 import (
+	"fmt"
+
 	"git.kanosolution.net/kano/kaos"
-	"git.kanosolution.net/kano/kaos/events/knats"
-	"github.com/ariefdarmawan/byter"
 	"github.com/eaciit/toolkit"
 )
 
@@ -13,7 +13,7 @@ type AppConfig struct {
 		Txt      string
 		PoolSize int
 	}
-	EventServers struct {
+	EventServer struct {
 		Server           string
 		Group            string
 		EventChangeTopic string
@@ -32,6 +32,7 @@ func NewAppConfig() *AppConfig {
 	return a
 }
 
+/*
 func GetConfig(eventServer, topic string, serve bool, s *kaos.Service) (*AppConfig, error) {
 	ev := knats.NewEventHub(eventServer, byter.NewByter(""))
 	defer ev.Close()
@@ -48,4 +49,13 @@ func ServeConfigChange(cfg *AppConfig, s *kaos.Service) {
 }
 
 func ServeConfigSet(cmd, key string, cfg *AppConfig, s *kaos.Service) {
+}
+*/
+
+func GetConfigFromEventHub(ev kaos.EventHub, topic string) (*AppConfig, error) {
+	res := new(AppConfig)
+	if e := ev.Publish(topic, "", res); e != nil {
+		return nil, fmt.Errorf("fail get config from nats server. %s", e.Error())
+	}
+	return res, nil
 }

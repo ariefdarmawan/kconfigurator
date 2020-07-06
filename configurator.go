@@ -26,7 +26,7 @@ func (c *configuratorModel) Write(ctx *kaos.Context, cfg *AppConfig) (*AppConfig
 	c.LastUpdate = time.Now()
 	c.appConfig = cfg
 	ev, _ := ctx.DefaultEvent()
-	ev.Publish(c.appConfig.EventServers.EventChangeTopic, c.appConfig, nil)
+	ev.Publish(c.appConfig.EventServer.EventChangeTopic, c.appConfig, nil)
 	return c.appConfig, nil
 }
 
@@ -56,7 +56,7 @@ func (c *configuratorModel) Set(ctx *kaos.Context, r *Request) (string, error) {
 	}
 
 	ev, _ := ctx.DefaultEvent()
-	ev.Publish(c.appConfig.EventServers.EventChangeTopic, c.appConfig, nil)
+	ev.Publish(c.appConfig.EventServer.EventChangeTopic, c.appConfig, nil)
 	return "OK", nil
 }
 
