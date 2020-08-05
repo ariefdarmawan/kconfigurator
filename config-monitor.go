@@ -40,6 +40,26 @@ func (cm *configMonitor) OnConfigChanged(ev kaos.EventHub, s *kaos.Service) erro
 		})
 }
 
+func MakeDbConn(config *AppConfig, s *kaos.Service) error {
+	for k := range config.Connections {
+		h, e := MakeHub(config, k)
+		if e != nil {
+			return fmt.Errorf("unable to initialize database %s: %s", k, e.Error())
+		}
+		s.RegisterDataHub(h, k)
+	}
+	return nil
+}
+
+func CloseDbConn(config *AppConfig, s *kaos.Service) {
+	for k := range config.Connections {
+		if h, e := s.GetDataHub(k); e == nil {
+			s.Log().Infof("closing database connection %s", k)
+			h.Close()
+		}
+	}
+}
+
 func MakeHub(config *AppConfig, name string) (*datahub.Hub, error) {
 	ci, ok := config.Connections[name]
 	if !ok {
