@@ -65,6 +65,8 @@ func MakeHub(config *AppConfig, name string) (*datahub.Hub, error) {
 	if !ok {
 		return nil, errors.New("Invalid ConnectionSettings " + name)
 	}
+
+	// intitate the hub
 	h := datahub.NewHub(func() (dbflex.IConnection, error) {
 		conn, err := dbflex.NewConnectionFromURI(ci.Txt, nil)
 		if err != nil {
@@ -77,5 +79,13 @@ func MakeHub(config *AppConfig, name string) (*datahub.Hub, error) {
 		conn.SetFieldNameTag(toolkit.TagName())
 		return conn, nil
 	}, ci.PoolSize > 0, ci.PoolSize)
+
+	// validate conn
+	i, c, e := h.GetConnection()
+	if e != nil {
+		return nil, fmt.Errorf("fail to get connection. %s. ConnString: %s", e.Error(), ci.Txt)
+	}
+	h.CloseConnection(i, c)
+
 	return h, nil
 }
