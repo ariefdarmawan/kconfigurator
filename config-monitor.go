@@ -26,8 +26,9 @@ func NewConfigMonitor(cfg *AppConfig, svc *kaos.Service) *configMonitor {
 	return cm
 }
 
+/*
 func (cm *configMonitor) OnConfigChanged(ev kaos.EventHub, s *kaos.Service) error {
-	return ev.Subscribe(cm.topic, s, nil,
+	return ev.Subscribe(cm.topic, nil,
 		func(ctx *kaos.Context, newCfg *AppConfig) (string, error) {
 			cm.cfg = newCfg
 			for connID := range newCfg.Connections {
@@ -39,6 +40,7 @@ func (cm *configMonitor) OnConfigChanged(ev kaos.EventHub, s *kaos.Service) erro
 			return "", nil
 		})
 }
+*/
 
 func MakeDbConn(config *AppConfig, s *kaos.Service) error {
 	for k := range config.Connections {

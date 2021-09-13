@@ -17,8 +17,6 @@ git.kanosolution.net/kano/dbflex v1.0.6/go.mod h1:YrD7Jmn46pnKDESWl758alHw3UgiYw
 git.kanosolution.net/kano/dbflex v1.0.11/go.mod h1:JwhKlws6r/uBbPE126aJpHbq3x4iugF0ViJlE/fFg/k=
 git.kanosolution.net/kano/dbflex v1.0.15 h1:DynJhEuOa8I+Rm7zWrVWUCV3cqfZzcIf+RC7vxXXTmQ=
 git.kanosolution.net/kano/dbflex v1.0.15/go.mod h1:pkhfg94DX3+2TQqpiaTQbCZUpr87Unsv8o/cvAiVhbs=
-git.kanosolution.net/kano/kaos v0.1.1 h1:QEvkO5qO0Pcdy0TsTHzAPHgbPqKQ3NFi2GYg3fP1HHc=
-git.kanosolution.net/kano/kaos v0.1.1/go.mod h1:2tv45oUbmdUeIjJ0s2i33AdCXe/I6/oNxTfPuxr2Ris=
 git.kanosolution.net/kano/kext v0.0.1 h1:ZLJ8ssDYMpiGbB+U1B+WX8eIjlzjkz8kNw0a0GZLmCc=
 git.kanosolution.net/kano/kext v0.0.1/go.mod h1:85ndPqMBudBfY9Wz4hfn1OgZPXtl5AyDo901bjSXi1g=
 git.kanosolution.net/koloni/crowd v0.0.0-20200721021204-51c29b01140c h1:vGol0c5n45zRp/5GDKLh6iWOSGG556eByTbYxvM2eVc=
