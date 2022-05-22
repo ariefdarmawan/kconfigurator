@@ -15,8 +15,8 @@ git.kanosolution.net/kano/appkit v0.0.1 h1:ZrNHoDdQrSTSCAglaVrQ2TVmy6mRN/RmNP7Oj
 git.kanosolution.net/kano/appkit v0.0.1/go.mod h1:GucUqulMe0BDSKSMSXzfS0gzxw8JO83QSexO9OKg128=
 git.kanosolution.net/kano/dbflex v1.0.11/go.mod h1:JwhKlws6r/uBbPE126aJpHbq3x4iugF0ViJlE/fFg/k=
 git.kanosolution.net/kano/dbflex v1.0.12/go.mod h1:JwhKlws6r/uBbPE126aJpHbq3x4iugF0ViJlE/fFg/k=
-git.kanosolution.net/kano/dbflex v1.0.16 h1:goq17MCXHU2b8Bq47rzOc+ZbXwkhffDy29R61d6ukFs=
-git.kanosolution.net/kano/dbflex v1.0.16/go.mod h1:1OWXvmkcBmbajWCqWMVtswK9oG9AdzfdTD1q9QuIJhE=
+git.kanosolution.net/kano/dbflex v1.0.17 h1:+oh1Ie1p6250lyI+deoDFfBdbe9svJbNWrEvw9icejM=
+git.kanosolution.net/kano/dbflex v1.0.17/go.mod h1:1OWXvmkcBmbajWCqWMVtswK9oG9AdzfdTD1q9QuIJhE=
 git.kanosolution.net/kano/kaos v0.2.0 h1:IBMaleTVHGJvvovPDvGplmvvYfgqA48qqSD0aI2IZUg=
 git.kanosolution.net/kano/kaos v0.2.0/go.mod h1:NwMLC/+BhCXZ5Papa2nlsgay/PnGNd0hmz/v/q9oK6Y=
 github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
@@ -28,8 +28,8 @@ github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRF
 github.com/ariefdarmawan/byter v0.0.1 h1:MzwkmVtMq7azicAB9mVkIYIwTS1eWgWIUHcQZ7Gx/aU=
 github.com/ariefdarmawan/byter v0.0.1/go.mod h1:VCTku8tT3X2aqDRweung2VxCbPPWxEZ3Jktw37D121I=
 github.com/ariefdarmawan/datahub v0.1.13/go.mod h1:00QQV4kYSnE3rCdWZtHPmeoCdX533sP25nFS30eZSgU=
-github.com/ariefdarmawan/datahub v0.2.0 h1:m2BLd+AepR+4v/UsUkt7y4lAQAiczhXcFF2yKwtRv0M=
-github.com/ariefdarmawan/datahub v0.2.0/go.mod h1:aDAh/qkU2BleQgyPS8czvFxyBiTksvxA18fF8zGTRzg=
+github.com/ariefdarmawan/datahub v0.2.1 h1:ucv+KoY+qerWU4ama5LK8pg0GI9MDC3SLLuYCkRQoNE=
+github.com/ariefdarmawan/datahub v0.2.1/go.mod h1:aDAh/qkU2BleQgyPS8czvFxyBiTksvxA18fF8zGTRzg=
 github.com/ariefdarmawan/flexmgo v0.1.15/go.mod h1:ZNVfnly+iMMBJ9sP142Kkt31CeQk+M8LLWYEfF59Qr8=
 github.com/ariefdarmawan/flexmgo v0.2.2 h1:xluyQHcpcI4YHtHhDgyW6d9IP2qkEcrk8braC3JEx2o=
 github.com/ariefdarmawan/flexmgo v0.2.2/go.mod h1:uW09cBzpeI/4Az0j2iLO4Va2wxfJ5T+m9012fUzM7JM=
