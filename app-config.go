@@ -2,6 +2,7 @@ package kconfigurator
 
 import (
 	"fmt"
+	"os"
 
 	"git.kanosolution.net/kano/kaos"
 	"github.com/eaciit/toolkit"
@@ -30,6 +31,15 @@ func NewAppConfig() *AppConfig {
 		PoolSize int
 	})
 	return a
+}
+
+func (cfg *AppConfig) DataToEnv() {
+	for k, v := range cfg.Data {
+		switch v.(type) {
+		case string:
+			os.Setenv(k, v.(string))
+		}
+	}
 }
 
 /*
