@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"git.kanosolution.net/kano/kaos"
-	"github.com/eaciit/toolkit"
+	"github.com/sebarcode/codekit"
 )
 
 type AppConfig struct {
@@ -20,7 +20,7 @@ type AppConfig struct {
 		EventChangeTopic string
 		EventChangeSet   string
 	}
-	Data toolkit.M
+	Data codekit.M
 }
 
 func NewAppConfig() *AppConfig {
@@ -41,26 +41,6 @@ func (cfg *AppConfig) DataToEnv() {
 		}
 	}
 }
-
-/*
-func GetConfig(eventServer, topic string, serve bool, s *kaos.Service) (*AppConfig, error) {
-	ev := knats.NewEventHub(eventServer, byter.NewByter(""))
-	defer ev.Close()
-
-	cfg := new(AppConfig)
-	e := ev.Publish(topic, "", cfg)
-	if e == nil && serve {
-		go ServeConfigChange(cfg, s)
-	}
-	return cfg, e
-}
-
-func ServeConfigChange(cfg *AppConfig, s *kaos.Service) {
-}
-
-func ServeConfigSet(cmd, key string, cfg *AppConfig, s *kaos.Service) {
-}
-*/
 
 func GetConfigFromEventHub(ev kaos.EventHub, topic string) (*AppConfig, error) {
 	res := new(AppConfig)

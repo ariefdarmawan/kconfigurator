@@ -7,7 +7,7 @@ import (
 	"git.kanosolution.net/kano/dbflex"
 	"git.kanosolution.net/kano/kaos"
 	"github.com/ariefdarmawan/datahub"
-	"github.com/eaciit/toolkit"
+	"github.com/sebarcode/codekit"
 )
 
 type configMonitor struct {
@@ -25,22 +25,6 @@ func NewConfigMonitor(cfg *AppConfig, svc *kaos.Service) *configMonitor {
 	cm.topic = cfg.EventServer.EventChangeTopic
 	return cm
 }
-
-/*
-func (cm *configMonitor) OnConfigChanged(ev kaos.EventHub, s *kaos.Service) error {
-	return ev.Subscribe(cm.topic, nil,
-		func(ctx *kaos.Context, newCfg *AppConfig) (string, error) {
-			cm.cfg = newCfg
-			for connID := range newCfg.Connections {
-				if h, e := MakeHub(newCfg, connID); e == nil {
-					cm.svc.RegisterDataHub(h, connID)
-				}
-			}
-			s.Log().Infof("Configuration has been changed")
-			return "", nil
-		})
-}
-*/
 
 func MakeDbConn(config *AppConfig, s *kaos.Service) error {
 	for k := range config.Connections {
@@ -78,7 +62,7 @@ func MakeHub(config *AppConfig, name string) (*datahub.Hub, error) {
 			return nil, fmt.Errorf("fail to connect. %s", err.Error())
 		}
 		conn.SetKeyNameTag("key")
-		conn.SetFieldNameTag(toolkit.TagName())
+		conn.SetFieldNameTag(codekit.TagName())
 		return conn, nil
 	}, ci.PoolSize > 0, ci.PoolSize)
 
