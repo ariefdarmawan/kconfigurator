@@ -112,8 +112,11 @@ func UpdateWithVar(txt string) string {
 
 func Update(txt string) string {
 	s := UpdateWithEnv(txt)
-	s = UpdateWithVar(txt)
+	if s == "" || s == txt {
+		s = UpdateWithVar(txt)
+	}
 
+	// special command
 	wd, e := os.Getwd()
 	if e == nil && strings.Contains(s, "${ctx:wd}") {
 		s = strings.ReplaceAll(s, "${ctx:wd}", wd)
