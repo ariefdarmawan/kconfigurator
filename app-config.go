@@ -72,7 +72,7 @@ func (cfg *AppConfig) DataToEnv() {
 
 func GetConfigFromEventHub(ev kaos.EventHub, topic string) (*AppConfig, error) {
 	res := new(AppConfig)
-	if e := ev.Publish(topic, "", res); e != nil {
+	if e := ev.Publish(topic, "", res, nil); e != nil {
 		return nil, fmt.Errorf("fail get config from nats server. %s", e.Error())
 	}
 	return res, nil
